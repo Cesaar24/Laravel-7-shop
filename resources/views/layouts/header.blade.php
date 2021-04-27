@@ -64,7 +64,30 @@
 
     <form class="form-inline mr-3 nav-search" action="{{route('search')}}" method="GET">
       @csrf
-      <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+        <!--dropdown-->
+        
+        <ul class="navbar-nav ">
+          <li class="nav-item dropdown">
+            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            <div class="dropdown-menu dropdown-default" >
+              <div class="dropdown-item mb-2" >
+                <img src="default.png" width="30px" height="30px">
+                <span > name01</span>
+                <span class="">$99.99</span>
+        
+              </div>
+              <div class="dropdown-item">
+                <img src="default.png" width="30px" height="30px">
+                <span > fsfo name01</span>
+                <span class="">$99.99</span>
+              </div>
+
+
+            </div>
+          </li>
+        </ul>
+        <!--end dropdown-->
       <button type="submit" class="search-button"><i class="fas fa-search fa-1x"></i></button>
     </form>
    

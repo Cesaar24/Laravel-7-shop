@@ -11,7 +11,8 @@
         <link rel="stylesheet" type="text/css" href="css/app.css">
          <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="https://kit.fontawesome.com/fd8d177af3.js" crossorigin="anonymous"></script>
- 
+        {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
+         {!! htmlScriptTagJsApi() !!}
   </head>
 <body>  
     @include('layouts.header')
@@ -72,12 +73,20 @@
 					       <textarea class="form-control" placeholder="Escriba su mensaje" name="msg"></textarea>
 					    </div>
                         @error('msg')
-                        <div class="alert alert-danger">{{$message}}</div>
+                            <div class="alert alert-danger">{{$message}}</div>
                         @enderror
 					  </div>
 
+                      <div class="mb-3 row">
+                        {{-- <div class="g-recaptcha" data-sitekey="6LceZLwaAAAAACFvt6XmrSZPSWetLPjs8qDzCpoM"></div> --}}
+                        {!! htmlFormSnippet() !!}
+                        @error('g-recaptcha-response')
+                            <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
+                      </div>
+
+
 					  <div class="mb-3 row">
-					    
 					    <div class="col-sm-12">
 					      <input type="submit" class="form-control btn btn-cyan" value="enviar">
 					    </div>

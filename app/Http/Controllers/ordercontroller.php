@@ -235,6 +235,7 @@ class ordercontroller extends Controller
             'email' => 'required|email',
             'subject' =>'required|string|max:30',
             'msg' => 'required|string|max:255|min:10',
+            recaptchaFieldName() => recaptchaRuleName(),
         ]);
         DB::table('contacts')->insert([
             'name' => $request->name,
